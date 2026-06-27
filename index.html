@@ -1496,8 +1496,8 @@
         const themeToggle = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
-        // 检查本地存储中的主题偏好
-        const currentTheme = localStorage.getItem('theme') || 'light';
+        // 检查本地存储中的主题偏好，默认暗色主题
+        const currentTheme = localStorage.getItem('theme') || 'dark';
         if (currentTheme === 'dark') {
             document.body.classList.add('dark-theme');
             themeToggle.textContent = '☀️';
