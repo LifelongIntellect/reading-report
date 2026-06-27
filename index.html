@@ -931,6 +931,40 @@
             color: var(--primary);
         }
 
+        /* Hero统计卡片 */
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 700px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat-card {
+            animation: fadeInUp 1s ease-out backwards;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6);
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 1;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        }
+
         /* 响应式 */
         @media (max-width: 768px) {
             .hero h1 {
@@ -946,6 +980,26 @@
                 font-size: 0.85rem;
                 letter-spacing: 2px;
                 padding: 0.4rem 1.5rem;
+            }
+
+            .hero-stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1rem;
+                max-width: 100%;
+                margin: 2rem 1rem 0;
+                padding: 0 0.5rem;
+            }
+
+            .hero-stat-card {
+                padding: 1rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-stat-label {
+                font-size: 0.8rem;
             }
 
             section {
@@ -1041,18 +1095,18 @@
             <p class="subtitle">142 本书籍 · 无尽的故事 · 思想的碰撞</p>
 
             <!-- 快速统计数字 -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 700px; margin: 3rem auto 0;">
-                <div style="animation: fadeInUp 1s ease-out 0.4s backwards; background: rgba(255, 255, 255, 0.15); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);">
-                    <div style="font-size: 3rem; font-weight: 900; font-family: 'Playfair Display', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6);">765</div>
-                    <div style="font-size: 0.9rem; opacity: 1; letter-spacing: 1px; margin-top: 0.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">小时阅读</div>
+            <div class="hero-stats-grid">
+                <div class="hero-stat-card" style="animation-delay: 0.4s;">
+                    <div class="hero-stat-number">765</div>
+                    <div class="hero-stat-label">小时阅读</div>
                 </div>
-                <div style="animation: fadeInUp 1s ease-out 0.5s backwards; background: rgba(255, 255, 255, 0.15); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);">
-                    <div style="font-size: 3rem; font-weight: 900; font-family: 'Playfair Display', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6);">57</div>
-                    <div style="font-size: 0.9rem; opacity: 1; letter-spacing: 1px; margin-top: 0.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">已完成</div>
+                <div class="hero-stat-card" style="animation-delay: 0.5s;">
+                    <div class="hero-stat-number">57</div>
+                    <div class="hero-stat-label">已完成</div>
                 </div>
-                <div style="animation: fadeInUp 1s ease-out 0.6s backwards; background: rgba(255, 255, 255, 0.15); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);">
-                    <div style="font-size: 3rem; font-weight: 900; font-family: 'Playfair Display', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6);">9</div>
-                    <div style="font-size: 0.9rem; opacity: 1; letter-spacing: 1px; margin-top: 0.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">年坚持</div>
+                <div class="hero-stat-card" style="animation-delay: 0.6s;">
+                    <div class="hero-stat-number">9</div>
+                    <div class="hero-stat-label">年坚持</div>
                 </div>
             </div>
         </div>
